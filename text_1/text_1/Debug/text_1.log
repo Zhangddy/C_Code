@@ -1,0 +1,4 @@
+﻿  text.c
+d:\code\project_t0\text_1\text_1\text.c(13): warning C4013: “gets”未定义；假设外部返回 int
+d:\code\project_t0\text_1\text_1\text.c(31): warning C4013: “system”未定义；假设外部返回 int
+  text_1.vcxproj -> D:\Code\Project_t0\text_1\Debug\text_1.exe
