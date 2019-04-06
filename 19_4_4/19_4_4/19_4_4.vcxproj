@@ -118,6 +118,8 @@
     <ClCompile Include="P1.c" />
     <ClCompile Include="P2.c" />
     <ClCompile Include="P3.c" />
+    <ClCompile Include="P4.c" />
+    <ClCompile Include="P5.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

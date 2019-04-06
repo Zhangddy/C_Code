@@ -24,5 +24,11 @@
     <ClCompile Include="P3.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="P4.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
