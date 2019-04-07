@@ -1,0 +1,6 @@
+﻿  test.c
+d:\code\project_t0\mine\mine\test.c(31): warning C4013: “rand”未定义；假设外部返回 int
+d:\code\project_t0\mine\mine\test.c(119): warning C4013: “system”未定义；假设外部返回 int
+d:\code\project_t0\mine\mine\test.c(177): warning C4013: “srand”未定义；假设外部返回 int
+d:\code\project_t0\mine\mine\test.c(130): warning C4715: “Judge”: 不是所有的控件路径都返回值
+  Mine.vcxproj -> D:\Code\Project_t0\Mine\Debug\Mine.exe
