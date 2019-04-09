@@ -5,7 +5,7 @@
 #define COL 9
 #define MAX_MINE 10
 
-void Init(char show_map[ROW][COL], char mine_map[ROW][COL])
+void Init(char show_map[ROW][COL], char mine_map[ROW][COL])//初始化地图
 {
 	for (int i = 0; i < ROW ; i++)
 	{
@@ -62,7 +62,7 @@ void Print(char map[ROW][COL])
 	}
 }
 
-int MineNum(char show_map[ROW][COL], char mine_map[ROW][COL], int row,int col)
+int MineNum(char show_map[ROW][COL], char mine_map[ROW][COL], int row,int col)//返回此坐标周围8个格的地雷数
 {
 	int mine_count = 0;
 	if (row -1 >= 0 && col -1 >= 0 && mine_map[row - 1][col - 1] == '1')
@@ -102,7 +102,6 @@ int MineNum(char show_map[ROW][COL], char mine_map[ROW][COL], int row,int col)
 
 int Judge(char show_map[ROW][COL], char mine_map[ROW][COL])
 {
-
 	while (1)
 	{
 		printf("请输入坐标:\n");
