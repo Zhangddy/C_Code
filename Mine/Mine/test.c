@@ -141,7 +141,7 @@ void Game()
 		n = Judge(show_map,mine_map);
 		counttimes++;
 		if (counttimes == ROW * COL - MAX_MINE)
-		{
+		{ 
 			system("cls");
 			Print(mine_map);
 			printf("¹§Ï²Äã,ÓÎÏ·Ê¤Àû!\n");
