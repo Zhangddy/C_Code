@@ -64,7 +64,7 @@ int main3()
 {
 	int a[] = { 1, 2, 3, 2, 3, 1, 4, 5, 5 , 4, 9};
 	int ret = 0;
-	for (int i = 0; i < (sizeof(a) / sizeof(a[0]) - 1); i++)
+	for (int i = 0; i < (sizeof(a) / sizeof(a[0])); i++)
 	{
 		ret ^= a[i];
 		//按位异或两次等于没变 , 0 异或任意数结果为任意数
