@@ -1,16 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-//1.��д������
+//1.编写函数：
 //unsigned int reverse_bit(unsigned int value);
-//��������ķ���ֵvalue�Ķ�����λģʽ�����ҷ�ת���ֵ��
+//这个函数的返回值value的二进制位模式从左到右翻转后的值。
 //
-//�磺
-//��32λ������25���ֵ�������и�λ��
+//如：
+//在32位机器上25这个值包含下列各位：
 //00000000000000000000000000011001
-//��ת�󣺣�2550136832��
+//翻转后：（2550136832）
 //10011000000000000000000000000000
-//���������أ�
+//程序结果返回：
 //2550136832
 unsigned int round(unsigned n)
 {
@@ -32,7 +32,7 @@ int main1()
 	int n = 15;
 	int i, tmp, sum = 0, sn = 2;
 
-	�� sn ������� n :
+	按 sn 进制输出 n :
 	for (i = n; i; i /= sn)
 	{
 		tmp = i % sn;
@@ -43,22 +43,22 @@ int main1()
 	return 0;
 }
 
-//2.��ʹ�ã�a + b�� / 2���ַ�ʽ������������ƽ��ֵ��
+//2.不使用（a + b） / 2这种方式，求两个数的平均值。
 
 int main2()
 {
 	int a=1;
 	int b=2;
 	int ret;
-	//����һλ��ͬ�� 2 , ����һλ��ͬ�� 2 .
+	//左移一位等同乘 2 , 右移一位等同除 2 .
 	ret = ((a + b) >> 1);
 	printf("%d \n", ret);
 	system("pause");
 	return 0;
 }
-//3.���ʵ�֣�
-//һ��������ֻ��һ�����ֳ�����һ�Ρ������������ֶ��ǳɶԳ��ֵġ�
-//���ҳ�������֡���ʹ��λ���㣩
+//3.编程实现：
+//一组数据中只有一个数字出现了一次。其他所有数字都是成对出现的。
+//请找出这个数字。（使用位运算）
 
 int main3()
 {
@@ -67,7 +67,7 @@ int main3()
 	for (int i = 0; i < (sizeof(a) / sizeof(a[0])); i++)
 	{
 		ret ^= a[i];
-		//��λ������ε���û�� , 0 ������������Ϊ������
+		//按位异或两次等于没变 , 0 异或任意数结果为任意数
 	}
 	printf("%d \n", ret);
 
@@ -76,13 +76,13 @@ int main3()
 }
 
 //4.
-//��һ���ַ����������Ϊ:"student a am i",
-//	���㽫��������ݸ�Ϊ"i am a student".
-//	Ҫ��
-//	����ʹ�ÿ⺯����
-//	ֻ�ܿ������޸��ռ䣨�ռ�������ַ����ĳ����޹أ���
+//有一个字符数组的内容为:"student a am i",
+//	请你将数组的内容改为"i am a student".
+//	要求：
+//	不能使用库函数。
+//	只能开辟有限个空间（空间个数和字符串的长度无关）。
 
-//˼·: �Ƚ���������ת��, �ٽ�����ת��
+//思路: 先将各个单词转置, 再将整体转置
 //	1. i am a student
 //	2. i ma a tneduts
 //	3. student a am i
@@ -107,13 +107,13 @@ void reverse_word(char* str)
 		if (str[i] == ' ')
 		{
 			end = i - 1;
-			reverse_string(str, star, end); // ��ÿ��������ת��
+			reverse_string(str, star, end); // 将每个单词先转置
 			star = i + 1;
 		}
 	}
-	reverse_string(str, star, i - 1);// ת�����һ������
+	reverse_string(str, star, i - 1);// 转置最后一个单词
 
-	reverse_string(str, 0, i - 1);//�����str������ת�þ͵õ��˽��
+	reverse_string(str, 0, i - 1);//将结果str整体再转置就得到了结果
 }
 
 
