@@ -50,27 +50,49 @@ void Empty()
 }
 void AddPersonInfo()
 {
+	system("cls");
+	int status = 1;
 	printf("新增联系人\n");
-	printf("请输入联系人姓名: ");
-	//必须获取到一个指针
-	if (g_address_book.size >= MAX_PERSON_INFO_SIZE)
+	printf("输入*号结束\n");
+	while (status == 1)
 	{
-		printf("新增联系人失败!\n");
-		return;
+		printf("请输入联系人姓名: ");
+		//必须获取到一个指针
+		if (g_address_book.size >= MAX_PERSON_INFO_SIZE)
+		{
+			printf("新增联系人失败!\n");
+			system("pause");
+			system("cls");
+			return;
+		}
+		PersonInfo* person_info = &g_address_book.persons[g_address_book.size];
+		scanf("%s", person_info->name);
+		if (strcmp(person_info->name,"*") == 0)
+		{
+			strcpy(person_info->name, "");
+			printf("结束新增联系人.\n");
+			system("pause");
+			system("cls");
+			return;
+		}
+
+		printf("请输入联系人电话: ");
+		scanf("%s", person_info->phone);
+		++g_address_book.size;
+		printf("新增联系人成功!\n");
 	}
-	PersonInfo* person_info = &g_address_book.persons[g_address_book.size];
-	scanf("%s", person_info->name);
-	printf("请输入联系人电话: ");
-	scanf("%s", person_info->phone);
-	++g_address_book.size;
-	printf("新增联系人成功!\n");
+	system("pause");
+	system("cls");
 }
 void DelPersonInfo()
 {
+	system("cls");
 	printf("删除联系人\n");
 	if (g_address_book.size <= 0)
 	{
 		printf("删除失败!通讯录为空!\n");
+		system("pause");
+		system("cls");
 		return;
 	}
 	printf("请输入要删除的序号: ");
@@ -84,13 +106,18 @@ void DelPersonInfo()
 	g_address_book.persons[id] = g_address_book.persons[g_address_book.size - 1];
 	--g_address_book.size;
 	printf("删除联系人成功!\n");
+	system("pause");
+	system("cls");
 }
 void FindPersonInfo()
 {
+	system("cls");
 	printf("查找联系人\n");
 	if (g_address_book.size <= 0)
 	{
 		printf("修改失败,通讯录为空!\n");
+		system("pause");
+		system("cls");
 		return;
 	}
 	printf("请输入要查找的姓名 :");
@@ -105,13 +132,18 @@ void FindPersonInfo()
 		}
 	}
 	printf("查找成功!\n");
+	system("pause");
+	system("cls");
 }
 void UpDatePersonInfo()
 {
+	system("cls");
 	printf("更新联系人\n");
 	if (g_address_book.size <= 0)
 	{
 		printf("修改失败,通讯录为空!\n");
+		system("pause");
+		system("cls");
 		return;
 	}
 	printf("请输入要修改的序号: ");
@@ -120,6 +152,8 @@ void UpDatePersonInfo()
 	if (id < 0 || id >= g_address_book.size)
 	{
 		printf("修改失败,输入的序号有误!\n");
+		system("pause");
+		system("cls");
 		return;
 	}
 	PersonInfo* info = &g_address_book.persons[id];
@@ -138,9 +172,12 @@ void UpDatePersonInfo()
 		strcpy(info->phone, phone);
 	}
 	printf("更新联系人成功!\n");
+	system("pause");
+	system("cls");
 }
 void PrintAllPersonInfo()
 {
+	system("cls");
 	printf("全部联系人\n");
 	for (int i = 0; i < g_address_book.size; ++i)
 	{
@@ -149,16 +186,49 @@ void PrintAllPersonInfo()
 	}
 	printf("共打印了 %d 条数据 !", g_address_book.size);
 	printf("打印全部联系人成功!\n");
+	system("pause");
+	system("cls");
 }
 void SortPersonInfo()
 {
-	//TODO
+	system("cls");
+	printf("按姓名排序\n");
+	int i, j;
+	if (g_address_book.size <= 0)
+	{
+		printf("联系人过少,无法排序!\n");
+		system("pause");
+		system("cls");
+		return 0;
+	}
+	for (i = 0; i < g_address_book.size; ++i)
+	{
+		for (j = 0; j < g_address_book.size - i - 1; j++)
+		{
+			if (strcmp(g_address_book.persons[j].name,g_address_book.persons[j + 1].name) > 0)
+			{
+				char temp1[1024] = "";
+				char temp2[1024] = "";
+				strcpy(temp1,g_address_book.persons[j].name);
+				strcpy(g_address_book.persons[j].name, g_address_book.persons[j + 1].name);
+				strcpy(g_address_book.persons[j + 1].name, temp1);
+				strcpy(temp2, g_address_book.persons[j].phone);
+				strcpy(g_address_book.persons[j].phone, g_address_book.persons[j + 1].phone);
+				strcpy(g_address_book.persons[j + 1].phone, temp2);
+			}
+		}
+	}
+	printf("按姓名排序成功!\n");
+	system("pause");
+	system("cls");
 }
 void ClearAllPersonInfo()
 {
+	system("cls");
 	printf("清空全部数据\n");
 	printf("您真的要清空全部数据嘛? Y/N\n");
 	char choice[1024] = { 0 };
+	scanf("%s", &choice);
 	if (strcmp(choice, "Y") == 0)
 	{
 		g_address_book.size = 0;
@@ -168,6 +238,8 @@ void ClearAllPersonInfo()
 	{
 		printf("清空操作取消!\n");
 	}
+	system("pause");
+	system("cls");
 }
 typedef void(*Func)();
 int main()
