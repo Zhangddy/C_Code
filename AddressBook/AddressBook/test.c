@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_PERSON_INFO_SIZE 300
+
 typedef struct PersonInfo
 {
 	char name[1024];
@@ -11,8 +11,9 @@ typedef struct PersonInfo
 
 typedef struct AddressBook
 {
-	PersonInfo persons[MAX_PERSON_INFO_SIZE];
+	PersonInfo* persons;
 	int size;//[0,size)有效的取值
+	int capacity;//最大容量
 }AddressBook;
 
 AddressBook g_address_book;//g_ 全局变量
@@ -37,7 +38,10 @@ int Menu()
 void Init()
 {
 	g_address_book.size = 0;
-	for (int i = 0; i < MAX_PERSON_INFO_SIZE; ++i)
+	g_address_book.capacity = 100;
+	g_address_book.persons = (PersonInfo*)malloc(g_address_book.capacity * sizeof(PersonInfo));
+
+	for (int i = 0; i < g_address_book.capacity; ++i)
 	{
 		g_address_book.persons[i].name[0] = '\0';
 		g_address_book.persons[i].phone[0] = '\0';
@@ -58,12 +62,23 @@ void AddPersonInfo()
 	{
 		printf("请输入联系人姓名: ");
 		//必须获取到一个指针
-		if (g_address_book.size >= MAX_PERSON_INFO_SIZE)
+		if (g_address_book.size >= g_address_book.capacity)
 		{
-			printf("新增联系人失败!\n");
-			system("pause");
-			system("cls");
-			return;
+			printf("当前空间不足!进行扩容!\n");
+			g_address_book.capacity += 100;
+			
+			//1.使用relloc进行扩容:
+			//g_address_book.persons = (PersonInfo*)realloc(g_address_book.persons, g_address_book.capacity * sizeof(PersonInfo));
+			
+			//2.使用malloc重新创建新区域进行扩容:
+			PersonInfo* p = (PersonInfo*)malloc(g_address_book.capacity * sizeof(PersonInfo));
+			
+			for (int i = 0; i < g_address_book.size; ++i)
+			{
+				p[i] = g_address_book.persons[i];
+			}
+			free(g_address_book.persons);
+			g_address_book.persons = p;
 		}
 		PersonInfo* person_info = &g_address_book.persons[g_address_book.size];
 		scanf("%s", person_info->name);
@@ -199,7 +214,7 @@ void SortPersonInfo()
 		printf("联系人过少,无法排序!\n");
 		system("pause");
 		system("cls");
-		return 0;
+		return;
 	}
 	for (i = 0; i < g_address_book.size; ++i)
 	{

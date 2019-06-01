@@ -1,3 +1,2 @@
 ﻿  test.c
-d:\code\project_t0\addressbook\addressbook\test.c(202): warning C4098: “SortPersonInfo”:“void”函数返回值
   AddressBook.vcxproj -> D:\Code\Project_t0\AddressBook\Debug\AddressBook.exe
