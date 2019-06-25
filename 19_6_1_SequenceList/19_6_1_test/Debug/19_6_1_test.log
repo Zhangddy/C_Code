@@ -1,0 +1,12 @@
+﻿  main.c
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(6): warning C4013: “SeqListInit”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(7): warning C4013: “SeqListPushBack”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(16): warning C4013: “SeqListPushFront”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(20): warning C4013: “SeqListPopFront”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(25): warning C4013: “SeqListInsert”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(27): warning C4013: “SeqListErase”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(28): warning C4013: “SeqListRemove”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(29): warning C4013: “SeqListModify”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(30): warning C4013: “SeqListPrint”未定义；假设外部返回 int
+d:\code\project_t0\19_6_1_test\19_6_1_test\main.c(31): warning C4013: “SeqListDestory”未定义；假设外部返回 int
+  19_6_1_test.vcxproj -> D:\Code\Project_t0\19_6_1_test\Debug\19_6_1_test.exe

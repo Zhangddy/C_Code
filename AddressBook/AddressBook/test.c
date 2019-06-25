@@ -26,7 +26,7 @@ int Menu()
 	printf("3.查找联系人\n");
 	printf("4.修改联系人\n");
 	printf("5.打印全部联系人\n");
-	printf("6.排序联系人\n");  //待完成
+	printf("6.排序联系人\n");
 	printf("7.清空联系人\n");
 	printf("0.退出\n");
 	printf("====================\n");
@@ -35,6 +35,7 @@ int Menu()
 	scanf("%d", &choice);
 	return choice;
 }
+
 void Init()
 {
 	g_address_book.size = 0;
@@ -218,7 +219,7 @@ void SortPersonInfo()
 	}
 	for (i = 0; i < g_address_book.size; ++i)
 	{
-		for (j = 0; j < g_address_book.size - i - 1; j++)
+		for (j = 0; j < g_address_book.size - i - 1; ++j)
 		{
 			if (strcmp(g_address_book.persons[j].name,g_address_book.persons[j + 1].name) > 0)
 			{
@@ -291,3 +292,4 @@ int main()
 	system("pause");
 	return 0;
 }
+
