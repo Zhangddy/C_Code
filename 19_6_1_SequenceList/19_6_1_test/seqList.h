@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include<assert.h>
+#include <assert.h>
 
 typedef int SLDataType;
 
@@ -12,7 +12,7 @@ typedef struct SeqList
 {
 	SLDataType* array;
 	size_t size;
-	size_t capicity;
+	size_t capicity;//иооч
 }SeqList;
 
 #endif //SEQLIST_H_

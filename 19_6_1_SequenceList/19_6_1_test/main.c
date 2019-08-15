@@ -24,6 +24,8 @@ int main()
 	SeqListErase(&test, 2);
 	SeqListRemove(&test, 5);
 	SeqListModify(&test, 0, 100);
+	SeqListBubbleSort(&test);
+	printf("%d\n",SeqListBinaryFind(&test, 100));
 	SeqListPrint(&test);
 	SeqListDestory(&test);
 	system("pause");
