@@ -29,13 +29,15 @@ void BinaryTreePostOrder(BTNode* root);
 // 非递归遍历
 // 层序遍历 
 void BinaryTreeLevelOrder(BTNode* root); 
+
 // 判断二叉树是否是完全二叉树 
 int BinaryTreeComplete(BTNode* root);
 
+// 非递归前中后序遍历
 void BinaryTreePrevOrderNonR(BTNode* root); 
 void BinaryTreeInOrderNonR(BTNode* root);
 void BinaryTreePostOrderNonR(BTNode* root);
 
-void TestBinaryTree();
+//void TestBinaryTree();
 
-#endif // !
+#endif
