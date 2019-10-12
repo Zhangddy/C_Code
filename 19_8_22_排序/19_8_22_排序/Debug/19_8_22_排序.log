@@ -1,4 +1,2 @@
-﻿  main.c
-d:\code\project_t0\19_8_22_排序\19_8_22_排序\main.c(17): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-d:\code\project_t0\19_8_22_排序\19_8_22_排序\main.c(27): warning C4013: “fun”未定义；假设外部返回 int
+﻿  sort.c
   19_8_22_排序.vcxproj -> D:\Code\Project_t0\19_8_22_排序\Debug\19_8_22_排序.exe

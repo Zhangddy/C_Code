@@ -3,14 +3,14 @@
 
 int main()
 {
-#if 0
+#if 1
 	
 	int src[11] = { 1, 3, 6, 7, 9, 2, 4, 8, 10, 5, 11 };
 	//int src[6] = { 1, 3, 6, 7, 9, 2};
 
 	//int src[3] = { 1, 3, 2 };
 	//QuickSort(src, 11);
-	QuickSortNonR(src, 11);
+	SelectSort(src, 11);
 	printArray(src, 11);
 	//fun(src, 3);
 #else

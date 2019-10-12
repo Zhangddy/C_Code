@@ -17,7 +17,7 @@ int doublePointerWay2(int* src, int start, int end);
 int digWay3(int* src, int start, int end);
 int hoareWay(int* src, int start, int end);
 void QuickSortNonR(int* src, int n);
-
+void SelectSort(int* src, int n);
 
 
 #endif // !

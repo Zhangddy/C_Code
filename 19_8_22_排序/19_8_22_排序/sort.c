@@ -41,6 +41,24 @@ void ShellSort(int* src, int n)	//ак╫Б
 	}
 }
 
+void SelectSort(int* src, int n)
+{
+	int i, j;
+	int min;
+	for (i = 0; i < n; i++)
+	{
+		min = i;
+		for (j = i; j < n; j++)
+		{
+			if (src[min] > src[j])
+			{
+				min = j;
+			}
+		}
+		swapArgs(src + min, src + i);
+	}
+}
+
 void dealMergeSort(int* src, int* tmp, int start, int end)
 {
 	if (start >= end)
@@ -303,9 +321,12 @@ int doublePointerWay1(int* src, int start, int end)
 void dealQuickSort(int* src,int start, int end)
 {
 	int mid;
-	if (start + 8 < end)
+	if (start + 8 < end)	//
 	{
+	//	mid = doublePointerWay(src, start, end);
+	//	mid = digWay(src, start, end);
 		mid = hoareWay(src, start, end);
+		
 		dealQuickSort(src, start, mid - 1);
 		dealQuickSort(src, mid + 1, end);
 	}
