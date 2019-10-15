@@ -1,0 +1,3 @@
+﻿  main.c
+d:\code\project_t0\19_7_2_doublelist\19_7_2_doublelist\main.c(14): warning C4013: “ListDestroy”未定义；假设外部返回 int
+  19_7_2_DoubleList.vcxproj -> D:\Code\Project_t0\19_7_2_DoubleList\Debug\19_7_2_DoubleList.exe

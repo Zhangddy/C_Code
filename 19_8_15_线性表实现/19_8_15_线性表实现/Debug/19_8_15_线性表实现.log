@@ -1,0 +1,4 @@
+﻿  test.c
+d:\code\project_t0\19_8_15_线性表实现\19_8_15_线性表实现\test.c(30): warning C4047: “=”:“ElemType *”与“ElemType”的间接级别不同
+d:\code\project_t0\19_8_15_线性表实现\19_8_15_线性表实现\test.c(55): warning C4101: “L2”: 未引用的局部变量
+  19_8_15_线性表实现.vcxproj -> D:\Code\Project_t0\19_8_15_线性表实现\Debug\19_8_15_线性表实现.exe

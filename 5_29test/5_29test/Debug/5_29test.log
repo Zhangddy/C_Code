@@ -1,0 +1,4 @@
+﻿  test.c
+d:\code\project_t0\5_29test\5_29test\test.c(9): error C2017: 非法的转义序列
+d:\code\project_t0\5_29test\5_29test\test.c(9): error C2146: 语法错误: 缺少“)”(在标识符“n”的前面)
+d:\code\project_t0\5_29test\5_29test\test.c(9): error C2059: 语法错误:“)”
