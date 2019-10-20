@@ -15,7 +15,7 @@ int main()
 
 	HeapPop(&hp);
 
-	HeapPrint(&hp);
+//	HeapPrint(&hp);
 
 	HeapSort(&hp);
 
